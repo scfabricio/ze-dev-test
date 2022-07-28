@@ -1,24 +1,12 @@
 import React from "react";
 
-function App() {
-    return (
-        <div className="App">
-            <header className="App-header">
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
+import HomePage from "./HomePage";
 
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
-    );
-}
+import "./styles/_styles.scss";
+import "./styles/_mixins.scss";
+
+const App = () => {
+    return <HomePage />;
+};
 
 export default App;

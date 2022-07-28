@@ -1,0 +1,56 @@
+$justify-positions: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    around: space-around,
+    between: space-between,
+    evenly: space-evenly,
+);
+
+$align-positions: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    stretch: stretch,
+    baseline: baseline,
+);
+
+$direction-positions: (
+    row: row,
+    column: column,
+);
+
+.flex {
+    display: flex;
+
+    @mixin just-align($name, $prop, $arr) {
+        @each $mod, $dir in $arr {
+            &-#{$name}-#{$mod} {
+                #{$prop}: #{$dir};
+            }
+        }
+    }
+
+    @include just-align("justify", "justify-content", $justify-positions);
+    @include just-align("align", "align-items", $align-positions);
+    @include just-align("direction", "flex-direction", $direction-positions);
+}
+
+$sizes: 16, 32, 72;
+@each $size in $sizes {
+    .mt-#{$size} {
+        margin-top: #{$size}px;
+    }
+
+    .mb-#{$size} {
+        margin-bottom: #{$size}px;
+    }
+
+    .pt-#{$size} {
+        padding-top: #{$size}px;
+    }
+
+    .pb-#{$size} {
+        padding-bottom: #{$size}px;
+    }
+}

@@ -1,0 +1,8 @@
+@import "../styles/variables";
+
+.home-page {
+    &__content-data {
+        background-color: $color-background-1;
+        height: 464px;
+    }
+}
