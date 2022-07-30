@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { FiArrowLeft, FiMapPin } from "react-icons/fi";
 
+import { IAddressSearchInputProps } from "./AddressSearchInput.types";
+
 import "./AddressSearchInput.scss";
 
-const AddressSearchInput = () => {
+const AddressSearchInput = ({ value, onChange }: IAddressSearchInputProps) => {
     const [active, setActive] = useState(false);
-    const [address, setAddress] = useState("");
 
     const closerBackdrop = () => {
         setActive(false);
-        setAddress("");
+        onChange("");
     };
 
     return (
@@ -27,8 +28,8 @@ const AddressSearchInput = () => {
                 <input
                     type="text"
                     name="address-search"
-                    value={address}
-                    onChange={(event) => setAddress(event.currentTarget.value)}
+                    value={value}
+                    onChange={(e) => onChange(e.target.value)}
                     className="address-search-input__input"
                     placeholder="Insira o endereço com número"
                     onFocus={() => setActive(true)}

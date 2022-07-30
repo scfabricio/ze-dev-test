@@ -4,5 +4,9 @@
     &__content-data {
         background-color: $color-background-1;
         height: 464px;
+
+        & > div:first-child {
+            max-width: 592px;
+        }
     }
 }

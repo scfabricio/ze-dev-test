@@ -27,6 +27,7 @@
     ],
     "rules": {
         "no-restricted-exports": "off",
+        "no-shadow": "off",
         "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
         "prettier/prettier": "error",
         "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
