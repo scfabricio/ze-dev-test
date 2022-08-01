@@ -4,7 +4,7 @@ $justify-positions: (
     center: center,
     around: space-around,
     between: space-between,
-    evenly: space-evenly,
+    evenly: space-evenly
 );
 
 $align-positions: (
@@ -12,12 +12,12 @@ $align-positions: (
     end: flex-end,
     center: center,
     stretch: stretch,
-    baseline: baseline,
+    baseline: baseline
 );
 
 $direction-positions: (
     row: row,
-    column: column,
+    column: column
 );
 
 .flex {
@@ -36,7 +36,7 @@ $direction-positions: (
     @include just-align("direction", "flex-direction", $direction-positions);
 }
 
-$sizes: 16, 32, 72;
+$sizes: 8, 16, 32, 72;
 @each $size in $sizes {
     .mt-#{$size} {
         margin-top: #{$size}px;

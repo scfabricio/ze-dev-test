@@ -1,16 +1,16 @@
-import React, { FormEvent } from "react";
+import React, { FormEvent, MouseEvent, useState } from "react";
 import { useLazyQuery } from "@apollo/client";
-import AddressForm from "../components/AddressForm";
-import Header from "../components/Header";
+import AddressForm from "../../components/AddressForm";
 
-import QueryPocSearch, { IPocSearch } from "../graphql/QueryPocSearch";
+import QueryPocSearch, { IPocSearch } from "../../graphql/QueryPocSearch";
+import Alert, { EVariantAlert } from "../../components/Alert";
 
 import "./HomePage.scss";
-import Alert, { EVariantAlert } from "../components/Alert";
 
 const HomePage = () => {
     const [getDistributor, { loading, error, data }] =
         useLazyQuery<IPocSearch>(QueryPocSearch);
+    const [custonError, setCustonError] = useState("");
 
     const handleSubmitAddressForm = (e: FormEvent, values: string) => {
         e.preventDefault();
@@ -26,15 +26,39 @@ const HomePage = () => {
         }
     };
 
+    const handleLocation = () => {
+        // Pegar as cooredenadas do navegador do usuário
+        navigator.geolocation.getCurrentPosition(
+            ({ coords: { latitude, longitude } }) => {
+                console.log(latitude, longitude);
+            },
+            () => {
+                setCustonError(
+                    "Não foi possível obter a sua localização. Tente novamente."
+                );
+            }
+        );
+    };
+
     return (
         <section className="home-page">
-            <Header />
             <main className="home-page__content-data pt-72 flex flex-direction-column flex-align-center">
                 <div>
-                    <AddressForm onSubmit={handleSubmitAddressForm} />
+                    <AddressForm
+                        onSubmit={handleSubmitAddressForm}
+                        onGetLocation={handleLocation}
+                    />
                     {error && (
                         <Alert variant={EVariantAlert.ERROR}>
                             Desculpa não conseguimos encontrar o distribuidor
+                        </Alert>
+                    )}
+                    {custonError && (
+                        <Alert
+                            variant={EVariantAlert.ERROR}
+                            callback={() => setCustonError("")}
+                        >
+                            {custonError}
                         </Alert>
                     )}
                     {loading && (

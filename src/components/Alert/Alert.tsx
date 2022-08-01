@@ -1,10 +1,10 @@
 import React from "react";
-import { FiAlertCircle, FiCheckCircle } from "react-icons/fi";
+import { FiAlertCircle, FiCheckCircle, FiX } from "react-icons/fi";
 import { IAlertProps, EVariantAlert } from "./Alert.types";
 
 import "./Alert.scss";
 
-const Alert = ({ variant, children, className }: IAlertProps) => {
+const Alert = ({ variant, children, className, callback }: IAlertProps) => {
     const variantData = {
         [EVariantAlert.ERROR]: {
             icon: <FiAlertCircle className="alert__icon" />,
@@ -26,7 +26,16 @@ const Alert = ({ variant, children, className }: IAlertProps) => {
                 className ?? ""
             }`}
         >
-            {variantData[variant].icon} {children}
+            {variantData[variant].icon} {children}{" "}
+            {callback && (
+                <button
+                    type="button"
+                    className="alert-close__icon"
+                    onClick={callback}
+                >
+                    <FiX />
+                </button>
+            )}
         </div>
     );
 };

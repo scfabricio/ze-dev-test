@@ -8,4 +8,5 @@ export interface IAlertProps {
     className?: string;
     variant: EVariantAlert;
     children: string;
+    callback?: () => void;
 }

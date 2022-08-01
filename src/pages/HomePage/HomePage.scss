@@ -1,6 +1,8 @@
-@import "../styles/variables";
+@import "../../styles/variables";
 
 .home-page {
+    flex: 1;
+
     &__content-data {
         background-color: $color-background-1;
         height: 464px;

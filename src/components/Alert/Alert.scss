@@ -7,7 +7,8 @@
     border-radius: 4px;
     display: flex;
     align-items: center;
-    padding: 1px 20px;
+    padding: 1px 45px 1px 20px;
+    position: relative;
 
     &__icon {
         height: 24px;
@@ -37,5 +38,15 @@
         .alert__icon {
             color: $color-feedback-success-2;
         }
+    }
+
+    &-close__icon {
+        height: 100%;
+        width: 40px;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        position: absolute;
+        right: 0;
     }
 }
