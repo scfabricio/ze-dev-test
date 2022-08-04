@@ -54,3 +54,15 @@ $sizes: 8, 16, 32, 72;
         padding-bottom: #{$size}px;
     }
 }
+
+@mixin for-small-desktop {
+    @media (max-width: 576px) {
+        @content;
+    }
+}
+
+@mixin for-middle-desktop {
+    @media (max-width: 768px) {
+        @content;
+    }
+}

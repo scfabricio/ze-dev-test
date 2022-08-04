@@ -5,7 +5,7 @@
 
     &__title {
         text-align: center;
-        font-size: 36px;
+        font-size: $font-size-lg;
     }
 }
 
@@ -48,7 +48,7 @@
     &__input {
         flex: 1;
         height: 100%;
-        font-size: 16px;
+        font-size: $font-size-md;
         background-color: transparent;
         padding: 1px 20px 1px 56px;
         border: 0;
@@ -65,7 +65,7 @@
     z-index: 2;
     text-align: start;
     padding-left: 16px;
-    font-size: 16px;
+    font-size: $font-size-md;
     color: $color-feedback-warning-1;
     cursor: pointer;
 

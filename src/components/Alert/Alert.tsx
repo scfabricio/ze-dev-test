@@ -1,20 +1,20 @@
 import React from "react";
 import { FiAlertCircle, FiCheckCircle, FiX } from "react-icons/fi";
-import { IAlertProps, EVariantAlert } from "./Alert.types";
+import { IAlertProps } from "./Alert.types";
 
 import "./Alert.scss";
 
 const Alert = ({ variant, children, className, callback }: IAlertProps) => {
     const variantData = {
-        [EVariantAlert.ERROR]: {
+        error: {
             icon: <FiAlertCircle className="alert__icon" />,
             className: "alert--error"
         },
-        [EVariantAlert.INFO]: {
+        info: {
             icon: <FiAlertCircle />,
             className: "alert--info"
         },
-        [EVariantAlert.SUCCESS]: {
+        success: {
             icon: <FiCheckCircle />,
             className: "alert--success"
         }

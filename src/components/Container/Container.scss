@@ -1,0 +1,11 @@
+@import "../../styles/mixins";
+
+.app-container {
+    margin: 0 10%;
+    width: 80%;
+
+    @include for-middle-desktop {
+        margin: 0 5%;
+        width: 90%;
+    }
+}

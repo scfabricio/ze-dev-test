@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-export interface ICategories {
+export interface IProducts {
     poc: {
         id: string;
         status: string;
@@ -9,7 +9,7 @@ export interface ICategories {
             id: string;
             title: string;
             image: string;
-            price: string;
+            price: number;
             category: {
                 id: string;
                 title: string;

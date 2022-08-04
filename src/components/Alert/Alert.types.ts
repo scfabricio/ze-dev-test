@@ -1,12 +1,6 @@
-export enum EVariantAlert {
-    ERROR,
-    INFO,
-    SUCCESS
-}
-
 export interface IAlertProps {
     className?: string;
-    variant: EVariantAlert;
+    variant: "error" | "info" | "success";
     children: string;
     callback?: () => void;
 }

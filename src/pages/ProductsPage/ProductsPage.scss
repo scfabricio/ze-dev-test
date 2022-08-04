@@ -1,1 +1,21 @@
 @import "../../styles/variables";
+
+.products-page {
+    flex: 1;
+
+    &__container {
+        padding: 20px 0;
+    }
+
+    &__loading {
+        margin-top: 50px;
+    }
+
+    &__list {
+        flex-wrap: wrap;
+    }
+
+    &__error-container {
+        margin: 20px 0;
+    }
+}

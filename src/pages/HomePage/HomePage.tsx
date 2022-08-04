@@ -3,7 +3,8 @@ import { useLazyQuery } from "@apollo/client";
 import AddressForm from "../../components/AddressForm";
 
 import QueryPocSearch, { IPocSearch } from "../../graphql/QueryPocSearch";
-import Alert, { EVariantAlert } from "../../components/Alert";
+import Alert from "../../components/Alert";
+import Container from "../../components/Container";
 
 import "./HomePage.scss";
 
@@ -43,19 +44,19 @@ const HomePage = () => {
     return (
         <section className="home-page">
             <main className="home-page__content-data pt-72 flex flex-direction-column flex-align-center">
-                <div>
+                <Container>
                     <AddressForm
                         onSubmit={handleSubmitAddressForm}
                         onGetLocation={handleLocation}
                     />
                     {error && (
-                        <Alert variant={EVariantAlert.ERROR}>
+                        <Alert variant="error">
                             Desculpa não conseguimos encontrar o distribuidor
                         </Alert>
                     )}
                     {custonError && (
                         <Alert
-                            variant={EVariantAlert.ERROR}
+                            variant="error"
                             callback={() => setCustonError("")}
                         >
                             {custonError}
@@ -64,7 +65,7 @@ const HomePage = () => {
                     {loading && (
                         <p style={{ textAlign: "center" }}>Carregando...</p>
                     )}
-                </div>
+                </Container>
             </main>
         </section>
     );

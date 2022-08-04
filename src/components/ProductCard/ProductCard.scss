@@ -1,0 +1,48 @@
+@import "../../styles/variables";
+
+.product-card {
+    height: 208px;
+    width: 181px;
+    box-shadow: rgb(0 0 0 / 8%) 0px 2px 4px 0px;
+    margin: 4px 8px 24px;
+
+    &__img {
+        max-height: 110px;
+        width: 100%;
+        object-fit: contain;
+        border-bottom: 1px solid rgb(243, 243, 243);
+    }
+
+    .text {
+        font-size: $font-size-sm;
+        color: $color-text-3;
+    }
+
+    .title {
+        padding: 8px;
+
+        .text {
+            display: -webkit-box;
+            line-height: 16px;
+            max-height: 32px;
+            white-space: normal;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    }
+
+    .prices {
+        padding: 8px;
+
+        .old-price {
+            text-decoration: line-through;
+        }
+
+        .current-price {
+            color: $color-text-1;
+            font-weight: $font-weight-bold;
+        }
+    }
+}

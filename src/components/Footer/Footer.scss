@@ -4,4 +4,25 @@
     height: 164px;
     width: 100%;
     background-color: $color-background-2;
+
+    & > div:first-child {
+        height: 100%;
+    }
+
+    &__logo {
+        height: 56px;
+        width: 176px;
+    }
+
+    &__social-list {
+        list-style: none;
+        padding: 0;
+        width: 176px;
+
+        .icon {
+            color: $color-neutral-light-pure;
+            width: 30px;
+            height: 30px;
+        }
+    }
 }
