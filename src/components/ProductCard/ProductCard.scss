@@ -3,7 +3,7 @@
 .product-card {
     height: 208px;
     width: 181px;
-    box-shadow: rgb(0 0 0 / 8%) 0px 2px 4px 0px;
+    box-shadow: $shadow-level-1;
     margin: 4px 8px 24px;
 
     &__img {

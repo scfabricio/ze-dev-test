@@ -1,0 +1,23 @@
+@import "../../styles/variables";
+
+.category-chip {
+    height: 32px;
+    border-radius: 16px;
+    border: 1px solid $color-neutral-light-2;
+    cursor: pointer;
+
+    &.disable {
+        cursor: not-allowed;
+        border: 1px solid transparent;
+        background-color: $color-neutral-dark-1;
+    }
+
+    span {
+        padding-left: 12px;
+        padding-right: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px;
+    }
+}

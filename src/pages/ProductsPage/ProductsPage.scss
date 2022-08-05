@@ -18,4 +18,13 @@
     &__error-container {
         margin: 20px 0;
     }
+
+    .categories-list {
+        list-style: none;
+        padding: 8px 0;
+
+        &>*:not(:first-child) {
+            margin-left: 8px;
+        }
+    }
 }
