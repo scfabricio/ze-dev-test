@@ -1,5 +1,5 @@
 module.exports = {
-    testEnvironment: "node",
+    testEnvironment: "jsdom",
     testMatch: ["<rootDir>/src/**/*.test.{js,jsx,ts,tsx}"],
     testPathIgnorePatterns: ["node_modules"],
     collectCoverageFrom: [
@@ -12,5 +12,8 @@ module.exports = {
         "!src/routes.tsx"
     ],
     coveragePathIgnorePatterns: ["<rootDir>/src/lib", "<rootDir>/src/graphql"],
-    setupFilesAfterEnv: ["./src/setupTests.js"]
+    setupFilesAfterEnv: ["./src/setupTests.js"],
+    moduleNameMapper: {
+        "^.+\\.(css|less|scss)$": "babel-jest"
+    }
 };

@@ -32,6 +32,7 @@ const Alert = ({ variant, children, className, callback }: IAlertProps) => {
                     type="button"
                     className="alert-close__icon"
                     onClick={callback}
+                    data-testid="alert-close-button"
                 >
                     <FiX />
                 </button>
