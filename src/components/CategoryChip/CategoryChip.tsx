@@ -4,15 +4,16 @@ import { ICategoryChipProps } from "./CategoryChip.types";
 
 import "./CategoryChip.scss";
 
-const CategoryChip = ({ children, onClick, disable }: ICategoryChipProps) => {
+const CategoryChip = ({ children, onClick, disabled }: ICategoryChipProps) => {
     return (
         <div
             className={`category-chip flex flex-align-center ${
-                disable ? "disable" : ""
+                disabled ? "disabled" : ""
             }`}
             aria-hidden="true"
             role="button"
-            onClick={onClick}
+            onClick={disabled ? undefined : onClick}
+            data-testid="category-chip-button"
         >
             <span>{children}</span>
         </div>

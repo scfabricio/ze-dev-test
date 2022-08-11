@@ -7,4 +7,20 @@
     &__logo {
         width: 121px;
     }
+
+    .search {
+        flex: 1;
+
+        &__input {
+            width: 350px;
+        }
+
+        &__icon {
+            position: absolute;
+            height: 24px;
+            width: 24px;
+            color: $color-neutral-light-3;
+            margin-left: 16px;
+        }
+    }
 }

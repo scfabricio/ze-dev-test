@@ -6,7 +6,7 @@
     border: 1px solid $color-neutral-light-2;
     cursor: pointer;
 
-    &.disable {
+    &.disabled {
         cursor: not-allowed;
         border: 1px solid transparent;
         background-color: $color-neutral-dark-1;

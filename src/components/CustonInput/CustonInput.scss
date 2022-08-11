@@ -1,0 +1,19 @@
+@import "../../styles/variables";
+
+.custon-input {
+    width: 100%;
+    height: 48px;
+    background-color: $color-neutral-light-pure;
+    border: 1px solid $color-neutral-light-1;
+    border-radius: 8px;
+
+    &__input {
+        width: 100%;
+        height: 100%;
+        font-size: $font-size-md;
+        background-color: transparent;
+        padding: 1px 20px 1px 56px;
+        border: 0;
+        outline: 0;
+    }
+}
